@@ -4,6 +4,10 @@
 ~~~
  @echo off
 ~~~
+* 空文字を echo すると「ECHO は <OFF> です」と出るのを抑制
+~~~
+if not "%i"=="" echo %i
+~~~
 
 * 実行中に値を変化させる Change value when executing
   * 通常変数はfor文等に入る前に**静的に評価される**のを毎回評価されるようにする
