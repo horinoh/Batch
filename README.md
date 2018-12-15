@@ -70,3 +70,43 @@ type XXX.txt | sort | XXX.bat
 for /f "tokens=1-3 delims=," %%i in (...) do (
 )
 ~~~
+
+# PowerShell
+* man
+~~~
+Get-Help Get-Content
+~~~
+  * 予め、管理者として PowerShell を実行して Update-Help しておく
+
+* echo
+~~~
+Wirte-Host("hoge")
+~~~
+
+* for
+~~~
+for($i=0;$i -lt 10;$i++){ Write-Host($i) }
+~~~
+
+* sort, uniq
+~~~
+Get-Content .\hoge.txt | Sort-Object -Unique
+Get-Content .\hoge.txt | Sort-Object | Get-Unique
+~~~
+
+* grep
+~~~
+Select-String .\hoge.txt -Pattern "HOGE"
+~~~
+
+* tail
+~~~
+Get-Content .\hoge.txt -Tail 3
+~~~
+
+* 文字コード変換
+~~~
+Get-Content \.hoge.txt | Set-Content .\utf8bom.txt -Encoding UTF8
+Get-Content \.hoge.txt | Set-Content .\utf16le.txt -Encoding Unicode
+Get-Content \.hoge.txt | Set-Content .\sjis.txt -Encoding default
+~~~
